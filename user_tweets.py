@@ -3,9 +3,12 @@ import os
 import datetime
 import flask
 from os.path import join, dirname
+from dotenv import load_dotenv
 
 app = flask.Flask(__name__)
 
+dotenv_path = join(dirname(__file__),'tweepy.env')
+load_dotenv(dotenv_path)
 
 consumer_key = os.getenv("KEY")
 consumer_secret = os.getenv("KEY_SECRET")
